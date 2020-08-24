@@ -1,0 +1,86 @@
+<div *ngIf="hasCategories() && createCategoryMenu()">
+    <div class="top-container">
+        <svg (click)="iscategoryMenu();">       
+            <circle cx=" 55 " cy="65 " r="25 " stroke="#286053 " stroke-width="4 " fill="#3ED598 " />
+            <text fill="#ffffff " font-size="45 " font-family="Verdana " x="36 " y="80 ">+</text>
+        </svg>
+        <h2 class="top-category ">Adicionar novo item</h2>
+    </div>
+    <section layout="row" layout-align="center center">
+        <ul class="categories">
+            <li *ngFor="let category of categories">
+                <div *ngIf="isOdd(category) && isYellow(category)">
+                    <div class="leftCategoryY" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isOdd(category) && isGreen(category)">
+                    <div class="leftCategoryG" routerLink="/commentaries/2" (click)="saveCategory()">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isOdd(category) && isRed(category)">
+                    <div class="leftCategoryR" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isOdd(category) && isPurple(category)">
+                    <div class="leftCategoryP" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="categories">
+            <li *ngFor="let category of categories">
+                <div *ngIf="isEven(category) && isYellow(category)">
+                    <div class="rightCategoryY" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isEven(category) && isGreen(category)">
+                    <div class="rightCategoryG" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isEven(category) && isRed(category)">
+                    <div class="rightCategoryR" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+                <div *ngIf="isEven(category) && isPurple(category)">
+                    <div class="rightCategoryP" routerLink="/commentaries/2">
+                        <p class="name">{{category.name}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="bottom-side">
+    </div>
+</div>
+
+<div *ngIf="!createCategoryMenu()">
+    <div class="btnVoltar" routerLink="/commentaries/0">
+    </div>
+    <h1>Criar Categoria</h1>
+    <p>Por favor, preencha os campos abaixo:</p>
+    <input type="text " placeholder="Nome da categoria " (keyup)="readyName($event)" />
+    <button class="first-img " (click)="readyImg()"></button>
+    <button class="second-img " (click)="readyImg()"></button>
+    <button class="third-img " (click)="readyImg()"></button>
+    <button class="fourth-img " (click)="readyImg()"></button>
+    <div *ngIf="isValid();">
+        <section layout="row" layout-align="center center">
+            <button class="btnVoltar2" routerLink="/commentaries/0"> <-- </button>
+            <button id="criarPreenchido" routerLink="/commentaries/0"> Criar --> </button>
+        </section>
+    </div>
+    <div *ngIf="!isValid();">
+        <section layout="row" layout-align="center center">
+            <button class="btnVoltar2" routerLink="/commentaries/0"> <-- </button>
+            <button id="criarNaoPreenchido" routerLink="/commentaries/0" disabled> Criar --> </button>
+        </section>
+    </div>
+</div>

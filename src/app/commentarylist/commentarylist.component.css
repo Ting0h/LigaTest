@@ -1,0 +1,177 @@
+#top-category {
+    position: absolute;
+    left: 35%;
+    bottom: 30%;
+    font: 17px sans-serif;
+    color: #3ED598;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 5% 5% 5% 5%;
+}
+
+p {
+    color: #767c77;
+    font-size: 1.5rem;
+    max-width: 15rem;
+    margin: 0 5% 5% 5%;
+}
+
+input {
+    background-color: #2d2b33;
+    height: 50px;
+    width: 80%;
+    margin: 0 5% 5% 5%;
+    border-radius: 1rem;
+    border: none;
+}
+
+#first-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 4% 5% 5%;
+    background-color: #FFC542;
+}
+
+#second-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 4% 5% 5%;
+    background-color: #3DD598;
+}
+
+#third-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 4% 5% 5%;
+    background-color: #FF575F;
+}
+
+#fourth-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 4% 5% 5%;
+    background-color: #755FE2;
+}
+
+#commentary {
+    height: 180px;
+}
+
+.commentaries {
+    margin: 0 0 2rem 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.eachCommentary {
+    width: 100%;
+    background-color: #30444E;
+    margin: 5% 5% 5% 5%;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.creator {
+    top: 1.8rem;
+    left: 5rem;
+    font-size: 1rem;
+    color: white;
+    position: absolute;
+}
+
+.badge {
+    max-width: 18rem;
+    color: white !important;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 1rem !important;
+}
+
+.category {
+    font-size: 1rem;
+    color: #3ED598;
+    padding: 0 0 5px 5px;
+}
+
+.date {
+    position: absolute;
+    top: 45px;
+    left: 5rem;
+    font-size: 1rem;
+}
+
+.bottom-side {
+    height: 70px;
+}
+
+#commentary-img {
+    height: 70px !important;
+}
+
+li {
+    width: 90%;
+    position: relative;
+}
+
+.create {
+    margin: 15% 5% 10px 5%;
+    height: 125px;
+    border-radius: 2rem;
+    border-style: dashed;
+    border-color: #3ED598;
+    position: relative;
+}
+
+.btnVoltar {
+    width: 45px;
+    height: 43px;
+    margin: 10% 0 10% 5%;
+    background: linear-gradient(180deg, #40DF9F 0%, #3ED598 100%);
+    box-shadow: 0px 2px 4px rgba(15, 218, 137, 0.3);
+    border-radius: 12px;
+}
+
+.btnVoltar2 {
+    margin-top: 10%;
+    width: 58px;
+    height: 58px;
+    background-color: #286053;
+    border: none;
+    border-radius: 1rem;
+    position: absolute;
+    left: 2rem;
+}
+
+#criarPreenchido {
+    position: absolute;
+    width: 70%;
+    height: 58px;
+    background: linear-gradient(180deg, #40DF9F 0%, #3ED598 100%);
+    box-shadow: 0px 2px 4px rgba(15, 218, 137, 0.3);
+    border-radius: 12px;
+    left: 6rem;
+    margin-top: 10%;
+}
+
+#criarNaoPreenchido {
+    position: absolute;
+    width: 70%;
+    height: 58px;
+    background: linear-gradient(180deg, #40DF9F 0%, #3ED598 100%);
+    box-shadow: 0px 2px 4px rgba(15, 218, 137, 0.3);
+    border-radius: 12px;
+    left: 6rem;
+    margin-top: 10%;
+    opacity: 0.6;
+}

@@ -1,0 +1,217 @@
+<div *ngIf="showMenu(); else elseBlock">
+    <div *ngIf="allCommentaries();">
+        <ul class="commentaries">
+            <li *ngFor="let commentary of commentaries">
+                <div class="eachCommentary" *ngIf="isRed(commentary);">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FF565E"/>
+                        <text x="45" y="50">👱🏻‍♀️</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isGreen(commentary);">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#3ED598" />
+                        <text x="45" y="50">👴</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isYellow(commentary);">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FFC542" />
+                        <text x="45" y="50">👨</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isPurple(commentary);">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#755FE2" />
+                        <text x="45" y="50">👩</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom-side">
+        </div>
+    </div>
+
+    <div *ngIf="displayUserCommentaries()">
+        <ul class="commentaries">
+            <li *ngFor="let commentary of commentaries">
+                <div class="eachCommentary" *ngIf="isRed(commentary) && userCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FF565E"/>
+                        <text x="45" y="50">👱🏻‍♀️</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isGreen(commentary) && userCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#3ED598" />
+                        <text x="45" y="50">👴</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isYellow(commentary) && userCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FFC542" />
+                        <text x="45" y="50">👨</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isPurple(commentary) && userCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#755FE2" />
+                        <text x="45" y="50">👩</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom-side">
+        </div>
+    </div>
+
+    <div *ngIf="displayCategoryCommentaries()">
+        <div class="create">
+            <svg (click)="createCommentaryMenu(); ">
+                <circle cx="55" cy="65" r="25" stroke="#286053" stroke-width="4" fill="#3ED598" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana" x="36" y="80">+</text>
+            </svg>
+            <h2 id="top-category">Adicionar novo comentário</h2>
+        </div>
+        <ul class="commentaries">
+            <li *ngFor="let commentary of commentaries">
+                <div class="eachCommentary" *ngIf="isRed(commentary) && categoryCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FF565E"/>
+                        <text x="45" y="50">👱🏻‍♀️</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isGreen(commentary) && categoryCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#3ED598" />
+                        <text x="45" y="50">👴</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isYellow(commentary) && categoryCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#FFC542" />
+                        <text x="45" y="50">👨</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+
+                <div class="eachCommentary" *ngIf="isPurple(commentary) && categoryCommentaries(commentary)">
+                    <svg id="commentary-img">
+                        <circle cx="55" cy="45" r="25" fill="#755FE2" />
+                        <text x="45" y="50">👩</text>
+                    </svg>
+                    <p class="creator">{{commentary.creator}}</p>
+                    <p class="date">{{commentary.date | date:"medium"}}</p>
+                    <div>
+                        <p class="badge">{{commentary.text}}</p>
+                        <p class="category">{{commentary.category}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div style="height: 70px;">
+        </div>
+    </div>
+    <div class="bottom-side">
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <div class="btnVoltar" routerLink="/categories">
+    </div>
+    <h1>Criar Comentario</h1>
+    <p>Por favor, preencha os campos abaixo:</p>
+    <input type="text" placeholder="Seu nome" (keyup)="readyName($event)" />
+    <button id="first-img" (click)="readyImg()">👨</button>
+    <button id="second-img" (click)="readyImg()">👴</button>
+    <button id="third-img" (click)="readyImg()">👩🏻</button>
+    <button id="fourth-img" (click)="readyImg()">👩</button>
+    <input id="commentary" type="text" placeholder="Digite o seu comentário" (keyup)="readyCommentary($event)" />
+    <div *ngIf="isValid();">
+        <section layout="row" layout-align="center center">
+            <button class="btnVoltar2" routerLink="/categories"> <-- </button>
+            <button id="criarPreenchido" routerLink="/categories"> Criar --> </button>
+        </section>
+    </div>
+    <div *ngIf="!isValid();">
+        <section layout="row" layout-align="center center">
+            <button class="btnVoltar2" routerLink="/categories"> <-- </button>
+            <button id="criarNaoPreenchido" routerLink="/categories" disabled> Criar --> </button>
+        </section>
+    </div>
+    <div class="bottom-side">
+    </div>
+</ng-template>
